@@ -1,6 +1,5 @@
-getdataproject
-==============
-__Getting and cleaning data : Course project__
+Getting and cleaning data course project : readme
+==================================================
 
 This README is related to the run_analysis.R function. The origin of the data, and the
 explanation of the final tidy data set can be found in the codebook (codebook.md file).
@@ -10,7 +9,7 @@ Version 1.0", the run_analysis.R code does the following.
 
 0) - It is assumed that the data set is in the current directory, with its original subfolders "test"
 and "train".
-   - The useful packages "dplyr" and "plyr" are loaded.
+   - The useful packages "dplyr" and "plyr" will be needed.
    
 1) _Step 1 of the project : This part merges the training and the test sets to create one data set._
 
