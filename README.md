@@ -51,7 +51,7 @@ The activities' names can be found in `activity_labels.txt`.
 We first read this file. We then transform the names : using lower cases instead of upper cases,
 and deleting the underscores.
 
-In `extract_df`, the activity variable is a char. We change this, in order to obtain a factor variable.
+In `extract_df`, the activity variable is of class `int`. We change this, in order to obtain a factor variable.
 Finally, we change the levels of the factor variable with the modified names.
 
 
