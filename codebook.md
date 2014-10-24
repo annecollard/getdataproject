@@ -1,5 +1,5 @@
-__ Getting and cleaning data course project__
-__ Codebook__
+Getting and cleaning data course project : codebook
+====================================================
 
 
 This codebook describes the data set `tidydata.txt` obtained when running `run_analysis.R`
@@ -15,6 +15,9 @@ DITEN - Universit‡ degli Studi di Genova.
 Via Opera Pia 11A, I-16145, Genoa, Italy.
 activityrecognition@smartlab.ws
 www.smartlab.ws
+
+Original dataset 
+-------------------
 
 The original experiments are described in the readme of the original data set : 
 
@@ -37,53 +40,50 @@ features was obtained by calculating variables from the time and frequency domai
 
 In the original dataset, the following data can be found : 
 
-_For each record it is provided:
-======================================
+_For each record it is provided:_
 
-- Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.
-- Triaxial Angular velocity from the gyroscope. 
-- A 561-feature vector with time and frequency domain variables. 
-- Its activity label. 
-- An identifier of the subject who carried out the experiment.
 
-The dataset includes the following files:
-=========================================
+_- Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration._
+_- Triaxial Angular velocity from the gyroscope._
+_- A 561-feature vector with time and frequency domain variables._
+_- Its activity label._
+_- An identifier of the subject who carried out the experiment._
 
-- 'README.txt'
+_The dataset includes the following files:_
 
-- 'features_info.txt': Shows information about the variables used on the feature vector.
+_- 'README.txt'_
 
-- 'features.txt': List of all features.
+*- 'features_info.txt': Shows information about the variables used on the feature vector.*
 
-- 'activity_labels.txt': Links the class labels with their activity name.
+_- 'features.txt': List of all features._
 
-- 'train/X_train.txt': Training set.
+*- 'activity_labels.txt': Links the class labels with their activity name.*
 
-- 'train/y_train.txt': Training labels.
+*- 'train/X_train.txt': Training set.*
 
-- 'test/X_test.txt': Test set.
+*- 'train\y_train.txt': Training labels.*
 
-- 'test/y_test.txt': Test labels.
+*- 'test/X_test.txt': Test set.*
 
-The following files are available for the train and test data. Their descriptions are equivalent. 
+*- 'test/y_test.txt': Test labels.*
 
-- 'train/subject_train.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
+_The following files are available for the train and test data. Their descriptions are equivalent._
 
-- 'train/Inertial Signals/total\_acc\_x\_train.txt': The acceleration signal from the smartphone accelerometer X axis in standard gravity units 'g'. Every row shows a 128 element vector. The same description applies for the 'total_acc_x_train.txt' and 'total_acc_z_train.txt' files for the Y and Z axis. 
+*- 'train/subject_train.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30.*
 
-- 'train/Inertial Signals/body\_acc\_x\_train.txt': The body acceleration signal obtained by subtracting the gravity from the total acceleration. 
+*(Missing text about (non-used) inertial signals).*
 
-- 'train/Inertial Signals/body\_gyro\_x\_train.txt': The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second. 
+_Notes:_ 
 
-Notes: 
-======
-- Features are normalized and bounded within [-1,1].
-- Each feature vector is a row on the text file.
+_- Features are normalized and bounded within [-1,1]._  
+_- Each feature vector is a row on the text file._  
 
-For more information about this dataset contact: activityrecognition@smartlab.ws_
+_For more information about this dataset contact: activityrecognition@smartlab.ws_
 
 It should be first noted that the Inertial signals were not used.
 
+Transformations 
+-----------------
 When running the analysis, the following transformations are made :
 
 1) A data set is created which contains 563 columns (the subject 
@@ -110,48 +110,48 @@ of the actual variables).
 
 The original data give the following info about the features :
 
-_The features selected for this database come from the accelerometer and gyroscope 3-axial
-raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time)
-were captured at a constant rate of 50 Hz. Then they were filtered using a median filter
-and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove
-noise. Similarly, the acceleration signal was then separated into body and gravity 
-acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth
-filter with a corner frequency of 0.3 Hz. 
+_The features selected for this database come from the accelerometer and gyroscope 3-axial_
+_raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time)_
+_were captured at a constant rate of 50 Hz. Then they were filtered using a median filter_
+_and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove_
+_noise. Similarly, the acceleration signal was then separated into body and gravity_
+_acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth_
+_filter with a corner frequency of 0.3 Hz._
 
-Subsequently, the body linear acceleration and angular velocity were derived in time to 
-obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these
-three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, 
-tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
+_Subsequently, the body linear acceleration and angular velocity were derived in time to_
+_obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these_
+_three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag,_
+_tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag)._
 
-Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing
-fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, 
-fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). 
+_Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing_
+_fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag,_
+_fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals)._
 
-These signals were used to estimate variables of the feature vector for each pattern:  
-'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
+_These signals were used to estimate variables of the feature vector for each pattern:_
+_'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions._
 
-tBodyAcc-XYZ
-tGravityAcc-XYZ
-tBodyAccJerk-XYZ
-tBodyGyro-XYZ
-tBodyGyroJerk-XYZ
-tBodyAccMag
-tGravityAccMag
-tBodyAccJerkMag
-tBodyGyroMag
-tBodyGyroJerkMag
-fBodyAcc-XYZ
-fBodyAccJerk-XYZ
-fBodyGyro-XYZ
-fBodyAccMag
-fBodyAccJerkMag
-fBodyGyroMag
-fBodyGyroJerkMag
+_tBodyAcc-XYZ_  
+_tGravityAcc-XYZ_  
+_tBodyAccJerk-XYZ_  
+_tBodyGyro-XYZ_  
+_tBodyGyroJerk-XYZ_  
+_tBodyAccMag_  
+_tGravityAccMag_  
+_tBodyAccJerkMag_  
+_tBodyGyroMag_  
+_tBodyGyroJerkMag_  
+_fBodyAcc-XYZ_  
+_fBodyAccJerk-XYZ_  
+_fBodyGyro-XYZ_  
+_fBodyAccMag_  
+_fBodyAccJerkMag_  
+_fBodyGyroMag_  
+_fBodyGyroJerkMag_  
 
-The set of variables that were estimated from these signals are: 
+_The set of variables that were estimated from these signals are:_
 
-mean(): Mean value
-std(): Standard deviation_
+_mean(): Mean value_  
+_std(): Standard deviation_  
 
 In the final data set, the "t" and "f" (for "time" and "frequence") become respectively
 "time" and "freq". Each axial signal is indicated by "xaxis" (resp. "yaxis" and "zaxis").
@@ -162,7 +162,9 @@ The values (and their unities) are conserved.
 all the observations from one subject performing one activity. They are thus 180 groups (rows
 in the data set). For the 66 variables, only the mean over each group is given.
 
-The final tidy data set (named `tidy` is thus of dimension 180*68).
+Final data set 
+----------------
+The final tidy data set (named `tidy`) is thus of dimension 180*68.
 
 The 68 variables are :
 
@@ -173,7 +175,8 @@ The 68 variables are :
 are related to what was measured, and in which direction (if applicable). They represent the 
 mean (for one subject doing one activity) of mean or standard deviation of the original measurements.
 
-
+Bibliography
+--------------
 [1] Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012
 
 This dataset is distributed AS-IS and no responsibility implied or explicit can be addressed to the authors or their institutions for its use or misuse. Any commercial use is prohibited.

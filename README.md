@@ -1,6 +1,5 @@
-getdataproject
-==============
-__Getting and cleaning data : Course project__
+Getting and cleaning data course project : readme
+==================================================
 
 This README is related to the run_analysis.R function. The origin of the data, and the
 explanation of the final tidy data set can be found in the codebook (codebook.md file).
