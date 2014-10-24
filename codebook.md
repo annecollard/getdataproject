@@ -16,6 +16,9 @@ Via Opera Pia 11A, I-16145, Genoa, Italy.
 activityrecognition@smartlab.ws
 www.smartlab.ws
 
+Original dataset 
+-------------------
+
 The original experiments are described in the readme of the original data set : 
 
 _The experiments have been carried out with a group of 30 volunteers within an age bracket
